@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Informasi Stok Bahan Ajar</title>
+  <link rel="stylesheet" href="css/style3.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <a class="brand" href="dashboard.html">SITTA UT</a>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="tracking.html">Tracking Pengiriman</a>
+      <button class="nav-button danger" onclick="logout()">Logout</button>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <section class="panel">
+      <div class="section-title">
+        <h1>Informasi Stok Bahan Ajar</h1>
+        <p>Data diambil dari <code>dataBahanAjar</code> pada file <code>js/data.js</code></p>
+      </div>
+
+      <!-- Form tambah stok -->
+      <form id="stokForm" class="form-grid">
+        <input type="text" id="kodeLokasi" placeholder="Kode Lokasi" required />
+        <input type="text" id="kodeBarang" placeholder="Kode Barang" required />
+        <input type="text" id="namaBarang" placeholder="Nama Barang" required />
+        <input type="text" id="jenisBarang" placeholder="Jenis Barang" required />
+        <input type="text" id="edisi" placeholder="Edisi" required />
+        <input type="number" id="stok" placeholder="Stok" min="0" required />
+        <input type="text" id="coverPath" placeholder="Path Cover (opsional)" />
+        <button type="submit" class="btn btn-primary">Tambah Stok</button>
+      </form>
+
+      <!-- Grid cover modul -->
+      <div id="stokCards" class="book-grid"></div>
+
+      <!-- Tabel stok -->
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Cover</th>
+              <th>Kode Lokasi</th>
+              <th>Kode Barang</th>
+              <th>Nama Barang</th>
+              <th>Jenis</th>
+              <th>Edisi</th>
+              <th>Stok</th>
+            </tr>
+          </thead>
+          <tbody id="stokTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tracking Pengiriman SITTA</title>
+  <link rel="stylesheet" href="css/style2.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <a class="brand" href="dashboard.html">SITTA UT</a>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="stok.html">Informasi Bahan Ajar</a>
+      <button class="nav-button danger" onclick="logout()">Logout</button>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <section class="panel">
+      <div class="section-title">
+        <h1>Tracking Pengiriman</h1>
+        <p>Masukkan Nomor Delivery Order untuk melihat nama mahasiswa, status, ekspedisi, tanggal kirim, jenis paket, dan total pembayaran.</p>
+      </div>
+
+      <!-- Form pencarian DO -->
+      <div class="search-box">
+        <input type="text" id="doNumber" placeholder="contoh: 2023001234" />
+        <button class="btn btn-primary" onclick="searchTracking()">Cari</button>
+      </div>
+
+      <!-- Contoh DO -->
+      <div class="sample-box">
+        Contoh Nomor DO:
+        <button class="btn-sample" onclick="fillDO('2023001234')">2023001234</button>
+        <button class="btn-sample" onclick="fillDO('2023005678')">2023005678</button>
+      </div>
+
+      <!-- Hasil tracking -->
+      <div id="trackingResult" class="tracking-result">
+        <p>Belum ada data yang dicari.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
